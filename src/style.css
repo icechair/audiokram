@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Oxygen", sans-serif;
+  background-color: #112233;
+  color: white;
+  display: flex;
+}
+
+.button {
+  cursor: pointer;
+  margin: auto;
+  padding: 15px 30px;
+  display: inline-block;
+  text-transform: uppercase;
+  transition: 0.1s;
+  position: relative;
+  overflow: hidden;
+}
+
+.button:hover {
+  background: #238412;
+  box-shadow: 0 0 10px #43a432, 0 0 40px #43a432, 0 0 80px #43a432;
+}
