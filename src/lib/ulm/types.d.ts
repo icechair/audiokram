@@ -2,7 +2,7 @@ export type Signal<TMessage> = (message: TMessage) => void;
 export type Effect<TMessage> = (signal: Signal<TMessage>) => void;
 export interface INext<TState, TMessage> {
   state: TState;
-  effect?: Effect<TMessage>;
+  effect?: Effect<TMessage> | null;
 }
 
 export type Update<TMessage, TState> = (

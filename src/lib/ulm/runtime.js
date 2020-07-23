@@ -37,3 +37,30 @@ export const runtime = (program) => {
   };
   return { start, stop };
 };
+
+/**
+ * @template T
+ * @template U
+ * @param {import("./types.d.ts").Effect<T>?} effect
+ * @param {(message:T)=>U} fn
+ * @returns {import("./types.d.ts").Effect<U>?}
+ */
+export function mapEffect(effect, fn) {
+  if (!effect) {
+    return effect;
+  }
+  return (signal) => {
+    effect((message) => signal(fn(message)));
+  };
+}
+
+/**
+ * @template T
+ * @template U
+ * @param {import("./types.d.ts").Signal<T>} signal
+ * @param {(message: U) => T} fn
+ * @returns {import("./types.d.ts").Signal<U>}
+ */
+export function mapSignal(signal, fn) {
+  return (message) => signal(fn(message));
+}

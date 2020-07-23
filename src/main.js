@@ -1,4 +1,4 @@
-import { App } from "./app/mod.js";
+import { App } from "./app/app.js";
 import { runtime } from "./lib/ulm/runtime.js";
 //@ts-ignore
 if (typeof document !== "undefined") {
