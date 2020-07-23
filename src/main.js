@@ -1,9 +1,8 @@
-import { CreateProgram } from "./app/mod.js";
-import { withRender } from "./lib/render.js";
-import { runtime } from "./deps.js";
+import { App } from "./app/mod.js";
+import { runtime } from "./lib/ulm/runtime.js";
 //@ts-ignore
 if (typeof document !== "undefined") {
   //@ts-ignore
-  const app = withRender(document.body, CreateProgram);
-  runtime(app);
+  const r = runtime(App(document.body));
+  r.start();
 }

@@ -1,13 +1,9 @@
 import { view } from "./view.js";
-import { update } from "./update.js";
+import { update, initialState } from "./update.js";
+import { withRender } from "../lib/ulm/render.js";
+import { vag } from "../deps.js";
 
-/**
- *
- * @param {import("../main.d.ts").AppSignal} signal
- */
-const effect = (signal) => setInterval(() => signal({ type: "tick" }), 1000);
-const getInit = () => ({ state: { counter: 0 }, effect });
-export const CreateProgram = () => {
-  const init = getInit();
+export const App = withRender(() => {
+  const init = initialState();
   return { init, update, view };
-};
+});

@@ -1,6 +1,7 @@
 import { html } from "../deps.js";
 /**
  *
- * @param {import("../main.d.ts").AppState} state
+ * @param {import("./types.d.ts").AppSignal} signal
+ * @param {import("./types.d.ts").AppState} state
  */
-export const view = (state) => html`<h1>${state.counter}</h1>`;
+export const view = (signal, state) => html`<h1>${state.counter}</h1>`;

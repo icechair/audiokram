@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
-    "lib": ["dom"]
+    "checkJs": false,
+    "strict": false,
+    "lib": ["dom", "esnext"]
   }
 }
